@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Form DTT</title>
+</head>
+
+<body class="h-screen bg-gray-100">
+    <!-- Begin Navbar-->
+    <nav class="bg-white h-20 w-full  flex flex-row z-10">
+        <img src="Frontend_Internship_Test_Slices/img_logo_dtt@3x.png" alt="Logo_DTT" class="h-12 w-15 mt-4 ml-[20rem]">
+        <p class="font-bold mt-6 mx-10"><a href="assessment.html">Houses</a></p>
+        <p class=" mt-6 ml-8 text-slate-500"><a href="assessment_about.html">About</a></p>
+    </nav>
+    <img src="Frontend_Internship_Test_Slices/img_background@3x.png" class="z-0 " alt="">
+    <!-- end Navbar-->
+
+    <!-- Begin Form-->
+    <div class="z-10 ml-[20rem] absolute top-40 flex flex-row">
+        <a href="assessment.html"><img src="Frontend_Internship_Test_Slices/ic_back_grey@3x.png" alt=""
+                class="h-6 w-6"></a>
+        <h1 class="font-bold ml-2">Back to Overview</h1>
+    </div>
+    <h1 class="font-bold text-4xl absolute top-60 ml-[20rem]">Create new listing</h1>
+    <div class="font-bold text-slate-500 absolute top-80 ml-[20rem]">
+        <form action="assessment_form_.html">
+            <p>Street name*</p>
+            <input type="text" placeholder="Enter the street name"
+                class="mt-5 py-3 px-2 pr-44 text-left rounded-lg outline-none" required>
+            <div class="flex flex-row mt-3">
+                <p>House number*</p>
+                <p class="ml-28">Addition (optional)</p>
+            </div>
+            <input type="text" placeholder="Enter house number"
+                class="mt-2 py-3 px-2 pr-10 w-[13rem] text-center rounded-lg outline-none" required>
+            <input type="text" placeholder="e.g A" class="mt-2 py-3 px-2 w-44 ml-2 text-center rounded-lg outline-none">
+            <p class="mt-3">Postal Code*</p>
+            <input type="text" placeholder="e.g 1000 AA" class="pr-44 py-3 px-2 mt-2 text-left rounded-lg outline-none">
+            <p class="mt-3">City*</p>
+            <input type="text" placeholder="e.g Utrecht" class="pr-44 py-3 px-2 mt-2 text-left rounded-lg outline-none">
+            <p class="mt-3">Upload picture (PNG or JPG)*</p>
+            <input type="file" src="" alt="" class="my-3">
+            <p>Price*</p>
+            <input type="text" placeholder="e.g €150.000"
+                class="pr-44 py-3 px-2 mt-2 text-left rounded-lg outline-none">
+            <div class="flex flex-row mt-3">
+                <p class="">Size*</p>
+                <p class="ml-48">Garage*</p>
+            </div>
+            <input type="text" placeholder="e.g 60m2"
+                class="mt-2 py-3 px-2 pr-10 w-[13rem] text-left rounded-lg outline-none" required>
+            <input type="number" min="1" placeholder="e.g A"
+                class="mt-2 py-3 px-2 w-44 ml-2 text-left rounded-lg outline-none" required>
+                <div class="flex flex-row mt-3">
+                    <p class="">Bedrooms*</p>
+                    <p class="ml-36">Bathrooms*</p>
+                </div>
+                <input type="number"  min="1" placeholder="Enter amount"
+                    class="mt-2 py-3 px-2 pr-10 w-[13rem] text-left rounded-lg outline-none" required>
+                <input type="number" min="1" placeholder="Enter amount"
+                    class="mt-2 py-3 px-2 w-44 ml-2 text-left rounded-lg outline-none" required>
+                    <p class="mt-3">Construction date*</p>
+                    <input type="text" placeholder="e.g 1990"
+                        class="pr-44 py-3 px-2 mt-2 text-left rounded-lg outline-none" required>
+                    <p class="mt-3">Description*</p>
+                    <textarea class="pr-44 py-3 px-6 mt-2 text-left rounded-lg outline-none" placeholder="Enter description"></textarea>
+                    <input type="submit" value="POST" class="font-bold text-white text-2xl mt-10 ml-[11rem] bg-red-300 px-20 rounded-lg flex flex-row py-4">
+        </form>
+    </div>
+    <!-- End  Form-->
+
+
+</body>
+
+</html>
