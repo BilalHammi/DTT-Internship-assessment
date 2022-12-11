@@ -11,60 +11,120 @@
 </head>
 
 <body class="h-screen bg-gray-100">
+
     <!-- Begin Navbar-->
-    <nav class="bg-white h-20 w-full  flex flex-row">
-        <img src="Frontend_Internship_Test_Slices/img_logo_dtt@3x.png" alt="Logo_DTT" class="h-12 w-15 mt-4 ml-[20rem]">
-        <p class="font-bold mt-6 mx-10"><a href="assessment.html">Houses</a></p>
-        <p class=" mt-6 ml-8 text-slate-500"><a href="assessment_about.html">About</a></p>
-    </nav>
+    <div class="max-sm:hidden">
+        <nav class="bg-white h-20 w-100%  flex flex-row">
+            <img src="Frontend_Internship_Test_Slices/img_logo_dtt@3x.png" alt="Logo_DTT"
+                class="h-12 w-15 mt-4 ml-[20rem]">
+            <p class="font-bold mt-6 mx-10"><a href="assessment.html">Houses</a></p>
+            <p class=" mt-6 ml-8 text-slate-500"><a href="assessment_about.html">About</a></p>
+        </nav>
+    </div>
     <!-- end Navbar-->
 
     <!-- Begin buttons, search bar-->
     <div class="flex flex-row">
-        <h1 class="font-bold text-4xl mt-20 ml-[20rem]">Houses</h1>
-
-        <div class="font-semibold text-2xl mt-20 ml-[50rem] bg-red-500 px-7 rounded-lg flex flex-row py-2">
+        <div class="max-sm:flex-row">
+            <h1 class="font-bold text-4xl mt-20 ml-[20rem] max-sm:ml-[10rem]">Houses</h1>
+            <div class="md:hidden max-sm:absolute max-sm:right-0 max-sm:top-20 max-sm:mr-[2rem] max-sm:mb-[2rem]">
+                <a href="assessment_form_.html"><img src="Frontend_Internship_Test_Slices/ic_plus_grey@3x.png" alt=""
+                        class="max-sm:visible max-sm:h-8 max-sm:w-8"></a>
+            </div>
+        </div>
+        <div
+            class="font-semibold text-2xl mt-20 ml-[50rem] bg-red-500 px-7 rounded-lg flex flex-row py-2 visible max-sm:hidden">
             <a href="assessment_form_.html"><img src="Frontend_Internship_Test_Slices/ic_plus_white@3x.png" alt=""
-                    class="h-5 w-5 mt-2">
+                    class="h-5 w-5 mt-2 max-sm:visible">
                 <a href="assessment_form_.html" class="text-white ml-3"> Create New</a>
         </div>
     </div>
-    <div class="flex flex-row">
-        <div class="flex flex-row ml-[20rem] mt-20 bg-gray-200 h-[3rem] w-[25rem] rounded-lg">
-            <img src="Frontend_Internship_Test_Slices/ic_search@3x.png" alt="" class="h-5 w-5 mr-4 mt-[1rem] ml-4">
-            <input type="text" placeholder="Search for a house" class="bg-gray-200 outline-none">
-        </div>
-        <div class="mt-20 ml-[28rem] font-bold rounded-lg flex flex-row text-white">
-            <button class="bg-red-500 px-14 rounded-l-lg">Price</button>
-            <button class="bg-gray-400 px-14 rounded-r-lg">Size</button>
-        </div>
-    </div>
-    <!-- end buttons, search bar-->
-
-    <!-- Begin Data of API, User data-->
-    <div class="bg-white h-48 w-[71rem] mt-10 ml-[20rem] rounded-lg z-0">
-        <!--
-        <div class="flex flex-column">
-            <h1 class="ml-[13rem] pt-[2rem] font-bold z-10 fixed">TEST</h1>
-            <p class="ml-[13rem] pt-[4rem] font-bold fixed">€ 50000</p>
-            <p class="ml-[13rem] pt-[6rem] font-bold fixed text-slate-300">1154 EZ Utrecht</p>
-            <div class="flex-row">
-                <img src="Frontend_Internship_Test_Slices/ic_bed@3x.png" class="ml-[13rem] pt-[8rem]" alt="">
-                <p class=" ml-[16rem] pt-[8rem] fixed">1</p>
-                <img src="Frontend_Internship_Test_Slices/ic_bath@3x.png" alt="" class="ml-[13rem] pt-[10rem]">
-                <p class="ml-[16rem] pt-[10rem] fixed">1</p>
-                <img src="Frontend_Internship_Test_Slices/ic_size@3x.png" alt="" class="ml-[13rem] pt-[12rem] ">
-                <p class="ml-[16rem] pt-[12rem] fixed">1</p>
+    <div id="cities">
+        <div class="flex flex-row max-sm:flex max-sm:flex-col">
+            <div
+                class="flex flex-row ml-[20rem] mt-20 bg-gray-200 h-[3rem] w-[25rem] max-sm:ml-[1rem] max-sm:mb-[6rem] max-sm:rounded-lg">
+                <img src="Frontend_Internship_Test_Slices/ic_search@3x.png" alt="" class="h-5 w-5 mr-4 mt-[1rem] ml-4">
+                <input type="text" v-model="Search" placeholder="Search" class="bg-gray-200 outline-none">
+            </div>
+            <div
+                class="mt-20 ml-[28rem] font-bold rounded-lg flex flex-row text-white max-sm:mt-[0rem] max-sm:mb-[0rem] max-sm:ml-[1rem]">
+                <button class="bg-red-500 px-14 rounded-l-lg max-sm:px-20 max-sm:h-12">Price</button>
+                <button class="bg-gray-400 px-14 rounded-r-lg max-sm:px-20 max-sm:h-12">Size</button>
             </div>
         </div>
-        <div class="">
-            <img src="Frontend_Internship_Test_Slices/img_placeholder_house@3x.png"
-                class="h-[11rem] w-[10rem] ml-3 py-3 pb-2 rounded-md" alt="">
+        <!-- end buttons, search bar-->
+
+        <!-- Begin Data of API, User data-->
+        <div
+            class="bg-white h-48 w-[71rem] ml-[20rem] max-sm:w-[27rem] max-sm:ml-[1rem] max-sm:w-[23rem] max-sm: mt-10 rounded-lg z-0">
+
+            <div class="flex flex-row">
+                <div class="p-2">
+                    <img src="Frontend_Internship_Test_Slices/img_placeholder_house@3x.png"
+                        class="h-[11rem] max-sm:h-[10rem] w-[10rem] max-sm: w-[13rem] rounded-md" alt="">
+                </div>
+                <div class="flex flex-row pl-5">
+                    <div class="flex flex-col p-5 gap-4 max-sm:mr-[5rem]">
+
+                        <h1 class="font-bold z-10">TEST</h1>
+                        <p class="font-bold">€ 50000</p>
+                        <p class="font-bold text-slate-300">1154 EZ Utrecht</p>
+                        <div class="flex flex-row text-end gap-5">
+                            <img src="Frontend_Internship_Test_Slices/ic_bed@3x.png" class="h-6 w-7" alt="">
+                            <p class="text-end">1</p>
+                            <img src="Frontend_Internship_Test_Slices/ic_bath@3x.png" alt="" class="h-6 w-7">
+                            <p class="text-end">1</p>
+                            <img src="Frontend_Internship_Test_Slices/ic_size@3x.png" alt="" class="h-6 w-7">
+                            <p class="text-end">5</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    -->
+    </div>
+    <div
+        class="bg-white h-48 w-[71rem] ml-[20rem] max-sm:w-[27rem] max-sm:ml-[1rem] max-sm:w-[23rem] max-sm: mt-10 rounded-lg z-0">
+
+        <div class="flex flex-row">
+            <div class="p-2">
+                <img src="Frontend_Internship_Test_Slices/img_placeholder_house@3x.png"
+                    class="h-[11rem] max-sm:h-[10rem] w-[10rem] max-sm: w-[13rem] rounded-md" alt="">
+            </div>
+            <div class="flex flex-row pl-5">
+                <div class="flex flex-col p-5 gap-4 max-sm:mr-[5rem]">
+
+                    <h1 class="font-bold z-10">TEST</h1>
+                    <p class="font-bold">€ 50000</p>
+                    <p class="font-bold text-slate-300">1154 EZ Utrecht</p>
+                    <div class="flex flex-row text-end gap-5">
+                        <img src="Frontend_Internship_Test_Slices/ic_bed@3x.png" class="h-6 w-7" alt="">
+                        <p class="text-end">1</p>
+                        <img src="Frontend_Internship_Test_Slices/ic_bath@3x.png" alt="" class="h-6 w-7">
+                        <p class="text-end">1</p>
+                        <img src="Frontend_Internship_Test_Slices/ic_size@3x.png" alt="" class="h-6 w-7">
+                        <p class="text-end">5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <footer class="md:hidden">
+            <div class="max-sm:bottom-0 max-sm:fixed max-sm:w-full max-sm:visible">
+                <div class="bg-white w-full flex justify-around">
+                    <a href="assessment.html"><img
+                            src="Frontend_Internship_Test_Slices/ic_mobile_navigarion_home_active@3x.png" alt="Logo_DTT"
+                            class="h-12 w-15 max-sm:h-8 max-sm:w-8"></a>
+                    <a href="assessment_about.html"><img
+                            src="Frontend_Internship_Test_Slices/ic_mobile_navigarion_info@3x.png" alt="Logo_DTT"
+                            class="h-12 w-15 max-sm:h-8 max-sm:w-8"></a>
+                </div>
+            </div>
+        </footer>
     </div>
     <!-- End Data of API, User data-->
-
+    <script>
+    </script>
 </body>
 
 </html>
